@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2e729f94f42ea6a7d32a308bb6eecbb",
+    "content-hash": "19a8e555e743b3d995bcae24e7e3e981",
     "packages": [
+        {
+            "name": "auret/bet-profiler",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nplasencia/BetProfiler.git",
+                "reference": "ea1e2e1a149f40e0ca0806d0f00f626e4f899633"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/ea1e2e1a149f40e0ca0806d0f00f626e4f899633",
+                "reference": "ea1e2e1a149f40e0ca0806d0f00f626e4f899633",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Auret\\BetProfiler\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Nauzet Plasencia Cruz",
+                    "email": "nauzet.plasencia.cruz@gmail.com"
+                }
+            ],
+            "description": "Bet profiler project",
+            "support": {
+                "issues": "https://github.com/nplasencia/BetProfiler/issues",
+                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.0"
+            },
+            "time": "2022-01-09T18:11:34+00:00"
+        },
         {
             "name": "composer/package-versions-deprecated",
             "version": "1.11.99.4",
@@ -9745,10 +9788,10 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0.2",
+        "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
