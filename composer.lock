@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "auret/bet-profiler",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nplasencia/BetProfiler.git",
-                "reference": "ea1e2e1a149f40e0ca0806d0f00f626e4f899633"
+                "reference": "ccd4ccd68eeda59d7882fcc90d6104d3b6af75ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/ea1e2e1a149f40e0ca0806d0f00f626e4f899633",
-                "reference": "ea1e2e1a149f40e0ca0806d0f00f626e4f899633",
+                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/ccd4ccd68eeda59d7882fcc90d6104d3b6af75ed",
+                "reference": "ccd4ccd68eeda59d7882fcc90d6104d3b6af75ed",
                 "shasum": ""
             },
             "require": {
@@ -45,9 +45,9 @@
             "description": "Bet profiler project",
             "support": {
                 "issues": "https://github.com/nplasencia/BetProfiler/issues",
-                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.0"
+                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.1"
             },
-            "time": "2022-01-09T18:11:34+00:00"
+            "time": "2022-01-11T14:07:13+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -3591,12 +3591,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "51ae9c69c41e67d69cdbf9eefb40a794a7deaa80"
+                "reference": "2c1403f70659f3fc4cd8ef220309524c3d54367c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/51ae9c69c41e67d69cdbf9eefb40a794a7deaa80",
-                "reference": "51ae9c69c41e67d69cdbf9eefb40a794a7deaa80",
+                "url": "https://api.github.com/repos/symfony/form/zipball/2c1403f70659f3fc4cd8ef220309524c3d54367c",
+                "reference": "2c1403f70659f3fc4cd8ef220309524c3d54367c",
                 "shasum": ""
             },
             "require": {
@@ -3685,7 +3685,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T14:00:06+00:00"
+            "time": "2022-01-02T09:56:25+00:00"
         },
         {
             "name": "symfony/framework-bundle",
