@@ -6431,12 +6431,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "1fd45fbff8cd348d8f764df620b59c5ff6d2c9ff"
+                "reference": "ecb78a083ae764cfe8dc4554b80d4f35c3f12280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/1fd45fbff8cd348d8f764df620b59c5ff6d2c9ff",
-                "reference": "1fd45fbff8cd348d8f764df620b59c5ff6d2c9ff",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/ecb78a083ae764cfe8dc4554b80d4f35c3f12280",
+                "reference": "ecb78a083ae764cfe8dc4554b80d4f35c3f12280",
                 "shasum": ""
             },
             "require": {
@@ -6518,7 +6518,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-08T14:00:06+00:00"
+            "time": "2022-01-07T00:29:17+00:00"
         },
         {
             "name": "symfony/translation-contracts",
