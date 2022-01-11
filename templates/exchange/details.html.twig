@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Add new exchange or update{% endblock %}
+{% block title %}{{ ('create.new.exchange.title')|trans }}{% endblock %}
 
 {% block body %}
 <style>
@@ -9,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Add new Exchange or update:</h1>
+    <h1>{{ ('create.new.exchange.title')|trans }}</h1>
 
     {% for label, messages in app.flashes %}
         {% for message in messages %}

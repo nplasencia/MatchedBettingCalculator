@@ -8,14 +8,18 @@ use Auret\BetProfiler\Model\ExchangeRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class BetExchangeController extends AbstractMatchedBettingController
 {
     private const CREATE_ROUTE_NAME = 'create_exchange';
 
     public function __construct(
-        private ExchangeBoundaryInterface $exchangeInteractor
-    ) {}
+        private ExchangeBoundaryInterface $exchangeInteractor,
+        private TranslatorInterface $translator
+    ) {
+        parent::__construct($this->translator);
+    }
 
     #[Route('/createExchange', name: self::CREATE_ROUTE_NAME)]
     public function create(): Response
@@ -29,8 +33,9 @@ class BetExchangeController extends AbstractMatchedBettingController
         $exchangeRequest = $this->getExchangeRequest($request);
         $this->exchangeInteractor->add($exchangeRequest);
 
-        $message = sprintf('Created new Exchange %s [%s]', $exchangeRequest->getName(), $exchangeRequest->getUrl());
-        $this->addInfoMessage($message);
+        $this->addInfoMessage(
+            'create.new.exchange.flash', ['name' => $exchangeRequest->getName(), 'url' => $exchangeRequest->getUrl()]
+        );
 
         return $this->redirectToRoute(self::CREATE_ROUTE_NAME);
     }

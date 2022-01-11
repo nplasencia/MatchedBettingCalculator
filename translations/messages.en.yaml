@@ -1,0 +1,7 @@
+
+# Exchange controller
+create:
+  new:
+    exchange:
+      title: Create new Exchange
+      flash: Created new Exchange name [url]
