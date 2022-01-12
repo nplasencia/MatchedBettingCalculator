@@ -13,9 +13,10 @@ class BetExchangeType extends AbstractMatchedBettingType
     {
         $builder
             ->setMethod('GET')
-            ->add('name', TextType::class)
-            ->add('url', TextType::class)
-            ->add('save', SubmitType::class, ['label' => $this->translator->trans('form.button.save')]);
+            ->setAction($this->generateAbsoluteUrl('store_exchange'))
+            ->add('name', TextType::class, ['required' => true])
+            ->add('url', TextType::class, ['required' => true])
+            ->add('save', SubmitType::class, ['label' => $this->translate('form.button.save')]);
     }
 
     protected function getDataClass(): string

@@ -4,12 +4,15 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 abstract class AbstractMatchedBettingType extends AbstractType
 {
     public function __construct(
-        protected TranslatorInterface $translator
+        private RouterInterface $router,
+        private TranslatorInterface $translator,
     ) {}
 
     abstract protected function getDataClass(): string;
@@ -17,5 +20,15 @@ abstract class AbstractMatchedBettingType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(['data_class' => $this->getDataClass()]);
+    }
+
+    public function generateAbsoluteUrl(string $urlName, array $parameters = []): string
+    {
+        return $this->router->generate($urlName, $parameters, UrlGeneratorInterface::ABSOLUTE_PATH);
+    }
+
+    public function translate(string $messageKey, array $parameters = []): string
+    {
+        return $this->translator->trans($messageKey, $parameters);
     }
 }

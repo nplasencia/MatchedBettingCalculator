@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 use App\Form\BetExchangeType;
+use App\Service\FlashMessageServiceInterface;
 use Auret\BetProfiler\Boundary\ExchangeBoundaryInterface;
 use Auret\BetProfiler\Model\ExchangeRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 class BetExchangeController extends AbstractMatchedBettingController
 {
@@ -16,10 +16,8 @@ class BetExchangeController extends AbstractMatchedBettingController
 
     public function __construct(
         private ExchangeBoundaryInterface $exchangeInteractor,
-        private TranslatorInterface $translator
-    ) {
-        parent::__construct($this->translator);
-    }
+        private FlashMessageServiceInterface $flashMessageService,
+    ) {}
 
     #[Route('/createExchange', name: self::CREATE_ROUTE_NAME)]
     public function create(): Response
@@ -33,7 +31,7 @@ class BetExchangeController extends AbstractMatchedBettingController
         $exchangeRequest = $this->getExchangeRequest($request);
         $this->exchangeInteractor->add($exchangeRequest);
 
-        $this->addInfoMessage(
+        $this->flashMessageService->addInfoMessage(
             'create.new.exchange.flash', ['name' => $exchangeRequest->getName(), 'url' => $exchangeRequest->getUrl()]
         );
 

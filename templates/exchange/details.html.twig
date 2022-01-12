@@ -19,7 +19,7 @@
         {% endfor %}
     {% endfor %}
 
-    {{ form_start(form, {'action': path('store_exchange'), 'method': 'GET'}) }}
+    {{ form_start(form) }}
 
     <div class="form-group">
         <label class="control-label col-lg-4" for="name">{{ ('form.field.name')|trans }}</label>

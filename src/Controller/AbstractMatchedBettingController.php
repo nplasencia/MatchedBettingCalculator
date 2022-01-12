@@ -16,9 +16,9 @@ abstract class AbstractMatchedBettingController extends AbstractController
         return $this->getCreatedForm()->createView();
     }
 
-    protected function getFormName(): string
+    private function getCreatedForm(): FormInterface
     {
-        return $this->getCreatedForm()->getName();
+        return $this->createForm($this->getClassType());
     }
 
     protected function getRequestDataEntity(Request $request): object
@@ -26,8 +26,8 @@ abstract class AbstractMatchedBettingController extends AbstractController
         return (object) $request->get($this->getFormName());
     }
 
-    private function getCreatedForm(): FormInterface
+    private function getFormName(): string
     {
-        return $this->createForm($this->getClassType());
+        return $this->getCreatedForm()->getName();
     }
 }

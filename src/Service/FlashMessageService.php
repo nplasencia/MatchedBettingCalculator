@@ -2,7 +2,7 @@
 
 namespace App\Service;
 
-use Psr\Container\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class FlashMessageService implements FlashMessageServiceInterface
@@ -12,7 +12,7 @@ class FlashMessageService implements FlashMessageServiceInterface
     private const FLASH_ERROR = 'error';
 
     public function __construct(
-        private ContainerInterface $container,
+        private RequestStack $requestStack,
         private TranslatorInterface $translator,
     ) {}
 
@@ -34,6 +34,6 @@ class FlashMessageService implements FlashMessageServiceInterface
     private function addFlashMessage(string $messageType, string $messageKey, array $parameters): void
     {
         $message = $this->translator->trans($messageKey, $parameters);
-        $this->container->get('request_stack')->getSession()->getFlashBag()->add($messageType, $message);
+        $this->requestStack->getSession()->getFlashBag()->add($messageType, $message);
     }
 }
