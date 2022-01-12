@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace App\Controller;
+namespace Auret\MatchedBetting\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormInterface;

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Repository;
+namespace Auret\MatchedBetting\Repository;
 
-use App\Entity\BetExchange;
+use Auret\MatchedBetting\Entity\BetExchange;
 use Auret\BetProfiler\Entity\Exchange;
 use Auret\BetProfiler\Gateway\ExchangeGatewayInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

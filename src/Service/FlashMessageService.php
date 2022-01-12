@@ -1,11 +1,11 @@
 <?php declare(strict_types = 1);
 
-namespace App\Service;
+namespace Auret\MatchedBetting\Service;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class FlashMessageService implements FlashMessageServiceInterface
+final class FlashMessageService implements FlashMessageServiceInterface
 {
     private const FLASH_INFO = 'info';
     private const FLASH_WARN = 'warning';

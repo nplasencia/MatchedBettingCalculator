@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace App\Form;
+namespace Auret\MatchedBetting\Form;
 
-use App\Entity\BetExchange;
+use Auret\MatchedBetting\Entity\BetExchange;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;

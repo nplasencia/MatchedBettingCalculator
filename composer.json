@@ -70,12 +70,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Auret\\MatchedBetting\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Auret\\MatchedBetting\\Tests\\": "tests/"
         }
     },
     "replace": {

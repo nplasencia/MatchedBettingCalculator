@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace App\Controller;
+namespace Auret\MatchedBetting\Controller;
 
-use App\Form\BetExchangeType;
-use App\Service\FlashMessageServiceInterface;
+use Auret\MatchedBetting\Form\BetExchangeType;
+use Auret\MatchedBetting\Service\FlashMessageServiceInterface;
 use Auret\BetProfiler\Boundary\ExchangeBoundaryInterface;
 use Auret\BetProfiler\Model\ExchangeRequest;
 use Symfony\Component\HttpFoundation\Request;
