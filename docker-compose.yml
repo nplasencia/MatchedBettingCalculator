@@ -37,3 +37,11 @@ services:
     depends_on:
       - php
       - database
+
+  phpunit:
+    container_name: phpunit
+    image: php:8.1-cli
+    volumes:
+      - .:/var/www/shadowbet
+    working_dir: /var/www/shadowbet
+    entrypoint: vendor/bin/phpunit
