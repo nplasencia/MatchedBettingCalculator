@@ -22,12 +22,12 @@ abstract class AbstractMatchedBettingType extends AbstractType
         $resolver->setDefaults(['data_class' => $this->getDataClass()]);
     }
 
-    public function generateAbsoluteUrl(string $urlName, array $parameters = []): string
+    protected function generateAbsoluteUrl(string $urlName, array $parameters = []): string
     {
         return $this->router->generate($urlName, $parameters, UrlGeneratorInterface::ABSOLUTE_PATH);
     }
 
-    public function translate(string $messageKey, array $parameters = []): string
+    protected function translate(string $messageKey, array $parameters = []): string
     {
         return $this->translator->trans($messageKey, $parameters);
     }
