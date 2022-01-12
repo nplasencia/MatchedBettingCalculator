@@ -22,14 +22,14 @@
     {{ form_start(form, {'action': path('store_exchange'), 'method': 'GET'}) }}
 
     <div class="form-group">
-        <label class="control-label col-lg-4" for="name">Name</label>
+        <label class="control-label col-lg-4" for="name">{{ ('form.field.name')|trans }}</label>
         <div class="col-lg-4">
             {{ form_widget(form.name) }}
         </div>
     </div>
 
     <div class="form-group">
-        <label class="control-label col-lg-4" for="url">Url</label>
+        <label class="control-label col-lg-4" for="url">{{ ('form.field.url')|trans }}</label>
         <div class="col-lg-4">
             {{ form_widget(form.url) }}
         </div>

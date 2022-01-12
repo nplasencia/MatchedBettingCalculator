@@ -3,13 +3,11 @@
 namespace App\Form;
 
 use App\Entity\BetExchange;
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class BetExchangeType extends AbstractType
+class BetExchangeType extends AbstractMatchedBettingType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -17,11 +15,11 @@ class BetExchangeType extends AbstractType
             ->setMethod('GET')
             ->add('name', TextType::class)
             ->add('url', TextType::class)
-            ->add('save', SubmitType::class, ['label' => 'Save Exchange']);
+            ->add('save', SubmitType::class, ['label' => $this->translator->trans('form.button.save')]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    protected function getDataClass(): string
     {
-        $resolver->setDefaults(['data_class' => BetExchange::class]);
+        return BetExchange::class;
     }
 }

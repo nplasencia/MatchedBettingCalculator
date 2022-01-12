@@ -5,3 +5,10 @@ create:
     exchange:
       title: Create new Exchange
       flash: Created new Exchange name [url]
+
+form:
+  field:
+    name: Name
+    url: Url
+  button:
+    save: Save
