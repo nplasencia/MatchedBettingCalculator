@@ -12,7 +12,7 @@ class BetExchangeType extends AbstractMatchedBettingType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->setMethod('GET')
+            ->setMethod('POST')
             ->setAction($this->generateAbsoluteUrl('store_exchange'))
             ->add('name', TextType::class, ['required' => true])
             ->add('url', TextType::class, ['required' => true])

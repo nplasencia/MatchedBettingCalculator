@@ -39,7 +39,7 @@ final class BetExchangeTypeTest extends TestCase
         $this->translator->expects($this->once())->method('trans')->with($saveKey, [])->willReturn($saveLabel);
 
         $builder = $this->createMock(FormBuilderInterface::class);
-        $builder->expects($this->once())->method('setMethod')->with('GET')->willReturn($builder);
+        $builder->expects($this->once())->method('setMethod')->with('POST')->willReturn($builder);
         $builder->expects($this->once())->method('setAction')->with($generatedUrl)->willReturn($builder);
         $builder->expects($this->exactly(3))->method('add')
             ->withConsecutive(
