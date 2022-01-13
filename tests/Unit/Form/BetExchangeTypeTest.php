@@ -2,7 +2,6 @@
 
 namespace Auret\MatchedBetting\Tests\Unit\Form;
 
-use Auret\MatchedBetting\Entity\BetExchange;
 use Auret\MatchedBetting\Form\BetExchangeType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
