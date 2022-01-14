@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "auret/bet-profiler",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nplasencia/BetProfiler.git",
-                "reference": "e81535b0b5edf5d086432b03156a1d717060a3bd"
+                "reference": "3fdcbf63b28333706a9cb693d050625fc64ca2b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/e81535b0b5edf5d086432b03156a1d717060a3bd",
-                "reference": "e81535b0b5edf5d086432b03156a1d717060a3bd",
+                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/3fdcbf63b28333706a9cb693d050625fc64ca2b8",
+                "reference": "3fdcbf63b28333706a9cb693d050625fc64ca2b8",
                 "shasum": ""
             },
             "require": {
@@ -45,9 +45,9 @@
             "description": "Bet profiler project",
             "support": {
                 "issues": "https://github.com/nplasencia/BetProfiler/issues",
-                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.2"
+                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.3"
             },
-            "time": "2022-01-12T10:18:06+00:00"
+            "time": "2022-01-14T14:08:24+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
@@ -2263,16 +2263,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v6.2.5",
+            "version": "v6.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "812b11b75298577984f90758aeb7bdc8ecd22c20"
+                "reference": "6bd976c99ef3f78e31c9490a10ba6dd8901076eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/812b11b75298577984f90758aeb7bdc8ecd22c20",
-                "reference": "812b11b75298577984f90758aeb7bdc8ecd22c20",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/6bd976c99ef3f78e31c9490a10ba6dd8901076eb",
+                "reference": "6bd976c99ef3f78e31c9490a10ba6dd8901076eb",
                 "shasum": ""
             },
             "require": {
@@ -2335,9 +2335,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/issues",
-                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.2.5"
+                "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.2.6"
             },
-            "time": "2022-01-02T16:55:10+00:00"
+            "time": "2022-01-14T11:51:13+00:00"
         },
         {
             "name": "symfony/asset",
