@@ -2,16 +2,16 @@
 
 namespace Auret\MatchedBetting\Tests\Application\Controller;
 
-use Auret\MatchedBetting\Repository\BetBookmakerRepository;
+use Auret\MatchedBetting\Repository\BookmakerRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-final class BetBookmakerControllerTest extends WebTestCase
+final class BookmakerControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
     private TranslatorInterface $translator;
-    private BetBookmakerRepository $repository;
+    private BookmakerRepository $repository;
 
     protected function setUp(): void
     {
@@ -19,7 +19,7 @@ final class BetBookmakerControllerTest extends WebTestCase
 
         $container = self::getContainer();
         $this->translator = $container->get(TranslatorInterface::class);
-        $this->repository = $container->get(BetBookmakerRepository::class);
+        $this->repository = $container->get(BookmakerRepository::class);
     }
 
     public function testCreate(): void
@@ -40,7 +40,7 @@ final class BetBookmakerControllerTest extends WebTestCase
         $this->client->request('GET', '/createBookmaker');
         $this->client->submitForm(
             $this->translator->trans('form.button.save'),
-            ['bet_bookmaker[name]' => $bookmakerName, 'bet_bookmaker[url]' => $bookmakerUrl]
+            ['bookmaker[name]' => $bookmakerName, 'bookmaker[url]' => $bookmakerUrl]
         );
 
         $this->assertResponseIsSuccessful();
@@ -68,7 +68,7 @@ final class BetBookmakerControllerTest extends WebTestCase
         $this->client->request('GET', '/createBookmaker');
         $this->client->submitForm(
             $this->translator->trans('form.button.save'),
-            ['bet_bookmaker[name]' => $bookmakerName, 'bet_bookmaker[url]' => $bookmakerUrl]
+            ['bookmaker[name]' => $bookmakerName, 'bookmaker[url]' => $bookmakerUrl]
         );
 
         $this->assertResponseIsSuccessful();

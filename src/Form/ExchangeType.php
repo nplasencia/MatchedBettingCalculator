@@ -2,19 +2,19 @@
 
 namespace Auret\MatchedBetting\Form;
 
-use Auret\MatchedBetting\Entity\BetBookmaker;
+use Auret\MatchedBetting\Entity\BetExchange;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class BetBookmakerType extends AbstractMatchedBettingType
+class ExchangeType extends AbstractMatchedBettingType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->setMethod('POST')
-            ->setAction($this->generateAbsoluteUrl('store_bookmaker'))
+            ->setAction($this->generateAbsoluteUrl('store_exchange'))
             ->add('name', TextType::class, ['required' => true])
             ->add('url', UrlType::class, ['required' => true])
             ->add('save', SubmitType::class, ['label' => $this->translate('form.button.save')]);
@@ -22,6 +22,6 @@ class BetBookmakerType extends AbstractMatchedBettingType
 
     protected function getDataClass(): string
     {
-        return BetBookmaker::class;
+        return BetExchange::class;
     }
 }

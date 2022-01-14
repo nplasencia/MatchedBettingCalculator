@@ -3,20 +3,20 @@
 namespace Auret\MatchedBetting\Tests\Integration\Repository;
 
 use Auret\BetProfiler\Entity\Exchange;
-use Auret\MatchedBetting\Repository\BetExchangeRepository;
+use Auret\MatchedBetting\Repository\ExchangeRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-final class BetExchangeRepositoryTest extends KernelTestCase
+final class ExchangeRepositoryTest extends KernelTestCase
 {
-    private BetExchangeRepository $repository;
+    private ExchangeRepository $repository;
 
     protected function setUp(): void
     {
         self::bootKernel();
         $container = self::getContainer();
 
-        /** @var BetExchangeRepository $repository */
-        $repository = $container->get(BetExchangeRepository::class);
+        /** @var ExchangeRepository $repository */
+        $repository = $container->get(ExchangeRepository::class);
         $this->repository = $repository;
     }
 

@@ -2,16 +2,16 @@
 
 namespace Auret\MatchedBetting\Tests\Application\Controller;
 
-use Auret\MatchedBetting\Repository\BetExchangeRepository;
+use Auret\MatchedBetting\Repository\ExchangeRepository;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-final class BetExchangeControllerTest extends WebTestCase
+final class ExchangeControllerTest extends WebTestCase
 {
     private KernelBrowser $client;
     private TranslatorInterface $translator;
-    private BetExchangeRepository $repository;
+    private ExchangeRepository $repository;
 
     protected function setUp(): void
     {
@@ -19,7 +19,7 @@ final class BetExchangeControllerTest extends WebTestCase
 
         $container = self::getContainer();
         $this->translator = $container->get(TranslatorInterface::class);
-        $this->repository = $container->get(BetExchangeRepository::class);
+        $this->repository = $container->get(ExchangeRepository::class);
     }
 
     public function testCreate(): void
@@ -40,7 +40,7 @@ final class BetExchangeControllerTest extends WebTestCase
         $this->client->request('GET', '/createExchange');
         $this->client->submitForm(
             $this->translator->trans('form.button.save'),
-            ['bet_exchange[name]' => $exchangeName, 'bet_exchange[url]' => $exchangeUrl]
+            ['exchange[name]' => $exchangeName, 'exchange[url]' => $exchangeUrl]
         );
 
         $this->assertResponseIsSuccessful();
@@ -68,7 +68,7 @@ final class BetExchangeControllerTest extends WebTestCase
         $this->client->request('GET', '/createExchange');
         $this->client->submitForm(
             $this->translator->trans('form.button.save'),
-            ['bet_exchange[name]' => $exchangeName, 'bet_exchange[url]' => $exchangeUrl]
+            ['exchange[name]' => $exchangeName, 'exchange[url]' => $exchangeUrl]
         );
 
         $this->assertResponseIsSuccessful();

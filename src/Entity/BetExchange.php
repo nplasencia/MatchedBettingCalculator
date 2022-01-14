@@ -2,11 +2,11 @@
 
 namespace Auret\MatchedBetting\Entity;
 
-use Auret\MatchedBetting\Repository\BetExchangeRepository;
+use Auret\MatchedBetting\Repository\ExchangeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=BetExchangeRepository::class)
+ * @ORM\Entity(repositoryClass=ExchangeRepository::class)
  * @ORM\Table(name="exchange")
  */
 class BetExchange

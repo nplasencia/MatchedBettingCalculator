@@ -2,7 +2,7 @@
 
 namespace Auret\MatchedBetting\Tests\Unit\Form;
 
-use Auret\MatchedBetting\Form\BetExchangeType;
+use Auret\MatchedBetting\Form\BookmakerType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,9 +12,9 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-final class BetExchangeTypeTest extends TestCase
+final class BookmakerTypeTest extends TestCase
 {
-    private BetExchangeType $type;
+    private BookmakerType $type;
 
     private RouterInterface $router;
     private TranslatorInterface $translator;
@@ -24,12 +24,12 @@ final class BetExchangeTypeTest extends TestCase
         $this->router = $this->createMock(RouterInterface::class);
         $this->translator = $this->createMock(TranslatorInterface::class);
 
-        $this->type = new BetExchangeType($this->router, $this->translator);
+        $this->type = new BookmakerType($this->router, $this->translator);
     }
 
     public function testBuildForm_success(): void
     {
-        $routeName = 'store_exchange';
+        $routeName = 'store_bookmaker';
         $generatedUrl = 'https://some.generated.url';
         $saveKey = 'form.button.save';
         $saveLabel = 'Some save translated label';

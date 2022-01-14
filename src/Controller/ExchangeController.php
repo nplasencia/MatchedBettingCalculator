@@ -2,7 +2,7 @@
 
 namespace Auret\MatchedBetting\Controller;
 
-use Auret\MatchedBetting\Form\BetExchangeType;
+use Auret\MatchedBetting\Form\ExchangeType;
 use Auret\MatchedBetting\Service\FlashMessageServiceInterface;
 use Auret\BetProfiler\Boundary\ExchangeBoundaryInterface;
 use Auret\BetProfiler\Model\ExchangeRequest;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BetExchangeController extends AbstractMatchedBettingController
+class ExchangeController extends AbstractMatchedBettingController
 {
     private const CREATE_ROUTE_NAME = 'create_exchange';
 
@@ -50,7 +50,7 @@ class BetExchangeController extends AbstractMatchedBettingController
 
     protected function getClassType(): string
     {
-        return BetExchangeType::class;
+        return ExchangeType::class;
     }
 
     private function isValidData(object $objectFromRequest): bool

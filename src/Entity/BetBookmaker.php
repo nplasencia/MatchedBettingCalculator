@@ -2,11 +2,11 @@
 
 namespace Auret\MatchedBetting\Entity;
 
-use Auret\MatchedBetting\Repository\BetBookmakerRepository;
+use Auret\MatchedBetting\Repository\BookmakerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=BetBookmakerRepository::class)
+ * @ORM\Entity(repositoryClass=BookmakerRepository::class)
  * @ORM\Table(name="bookmaker")
  */
 class BetBookmaker

@@ -8,7 +8,7 @@ use Auret\BetProfiler\Gateway\BookmakerGatewayInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-class BetBookmakerRepository extends ServiceEntityRepository implements BookmakerGatewayInterface
+class BookmakerRepository extends ServiceEntityRepository implements BookmakerGatewayInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

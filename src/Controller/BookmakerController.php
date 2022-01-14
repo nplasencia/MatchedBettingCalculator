@@ -2,7 +2,7 @@
 
 namespace Auret\MatchedBetting\Controller;
 
-use Auret\MatchedBetting\Form\BetBookmakerType;
+use Auret\MatchedBetting\Form\BookmakerType;
 use Auret\MatchedBetting\Service\FlashMessageServiceInterface;
 use Auret\BetProfiler\Boundary\BookmakerBoundaryInterface;
 use Auret\BetProfiler\Model\BookmakerRequest;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BetBookmakerController extends AbstractMatchedBettingController
+class BookmakerController extends AbstractMatchedBettingController
 {
     private const CREATE_ROUTE_NAME = 'create_bookmaker';
 
@@ -50,7 +50,7 @@ class BetBookmakerController extends AbstractMatchedBettingController
 
     protected function getClassType(): string
     {
-        return BetBookmakerType::class;
+        return BookmakerType::class;
     }
 
     private function isValidData(object $objectFromRequest): bool

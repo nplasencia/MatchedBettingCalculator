@@ -3,20 +3,20 @@
 namespace Auret\MatchedBetting\Tests\Integration\Repository;
 
 use Auret\BetProfiler\Entity\Bookmaker;
-use Auret\MatchedBetting\Repository\BetBookmakerRepository;
+use Auret\MatchedBetting\Repository\BookmakerRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-final class BetBookmakerRepositoryTest extends KernelTestCase
+final class BookmakerRepositoryTest extends KernelTestCase
 {
-    private BetBookmakerRepository $repository;
+    private BookmakerRepository $repository;
 
     protected function setUp(): void
     {
         self::bootKernel();
         $container = self::getContainer();
 
-        /** @var BetBookmakerRepository $repository */
-        $repository = $container->get(BetBookmakerRepository::class);
+        /** @var BookmakerRepository $repository */
+        $repository = $container->get(BookmakerRepository::class);
         $this->repository = $repository;
     }
 

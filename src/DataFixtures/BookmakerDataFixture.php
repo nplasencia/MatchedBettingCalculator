@@ -4,7 +4,7 @@ namespace Auret\MatchedBetting\DataFixtures;
 
 use Auret\MatchedBetting\Entity\BetBookmaker;
 
-final class BetBookmakerDataFixture extends MatchedBettingFixture
+final class BookmakerDataFixture extends MatchedBettingFixture
 {
     protected function generateFakerData(): BetBookmaker
     {

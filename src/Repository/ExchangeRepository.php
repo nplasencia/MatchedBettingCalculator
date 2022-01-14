@@ -8,7 +8,7 @@ use Auret\BetProfiler\Gateway\ExchangeGatewayInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-class BetExchangeRepository extends ServiceEntityRepository implements ExchangeGatewayInterface
+class ExchangeRepository extends ServiceEntityRepository implements ExchangeGatewayInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
