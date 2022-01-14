@@ -27,4 +27,8 @@ services:
     Auret\BetProfiler\Boundary\ExchangeBoundaryInterface:
         class: Auret\BetProfiler\Interactor\ExchangeInteractor
 
+    Auret\BetProfiler\Boundary\BookmakerBoundaryInterface:
+        class: Auret\BetProfiler\Interactor\BookmakerInteractor
+
     Auret\BetProfiler\Gateway\ExchangeGatewayInterface: '@Auret\MatchedBetting\Repository\BetExchangeRepository'
+    Auret\BetProfiler\Gateway\BookmakerGatewayInterface: '@Auret\MatchedBetting\Repository\BetBookmakerRepository'

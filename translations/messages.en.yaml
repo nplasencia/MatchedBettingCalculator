@@ -1,5 +1,4 @@
 
-# Exchange controller
 create:
   new:
     exchange:
@@ -7,6 +6,12 @@ create:
       flash:
         info: Created new Exchange name [url]
         error: Problem creating new Exchange. Check data provided.
+
+    bookmaker:
+      title: Create new Bookmaker
+      flash:
+        info: Created new Bookmaker name [url]
+        error: Problem creating new Bookmaker. Check data provided.
 
 form:
   field:
