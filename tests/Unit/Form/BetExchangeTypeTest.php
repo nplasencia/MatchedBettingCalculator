@@ -6,6 +6,7 @@ use Auret\MatchedBetting\Form\BetExchangeType;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
@@ -44,7 +45,7 @@ final class BetExchangeTypeTest extends TestCase
         $builder->expects($this->exactly(3))->method('add')
             ->withConsecutive(
                 ['name', TextType::class, ['required' => true]],
-                ['url', TextType::class, ['required' => true]],
+                ['url', UrlType::class, ['required' => true]],
                 ['save', SubmitType::class, ['label' => $saveLabel]],
             )
             ->willReturn($builder);

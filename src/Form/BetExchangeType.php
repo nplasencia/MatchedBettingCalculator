@@ -5,6 +5,7 @@ namespace Auret\MatchedBetting\Form;
 use Auret\MatchedBetting\Entity\BetExchange;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class BetExchangeType extends AbstractMatchedBettingType
@@ -15,7 +16,7 @@ class BetExchangeType extends AbstractMatchedBettingType
             ->setMethod('POST')
             ->setAction($this->generateAbsoluteUrl('store_exchange'))
             ->add('name', TextType::class, ['required' => true])
-            ->add('url', TextType::class, ['required' => true])
+            ->add('url', UrlType::class, ['required' => true])
             ->add('save', SubmitType::class, ['label' => $this->translate('form.button.save')]);
     }
 
