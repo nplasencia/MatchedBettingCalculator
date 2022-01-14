@@ -2,7 +2,7 @@
 
 namespace Auret\MatchedBetting\Entity;
 
-use App\Repository\BetExchangeRepository;
+use Auret\MatchedBetting\Repository\BetExchangeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
