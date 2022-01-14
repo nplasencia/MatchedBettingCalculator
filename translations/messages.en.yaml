@@ -4,7 +4,9 @@ create:
   new:
     exchange:
       title: Create new Exchange
-      flash: Created new Exchange name [url]
+      flash:
+        info: Created new Exchange name [url]
+        error: Problem creating new Exchange. Check data provided.
 
 form:
   field:

@@ -28,14 +28,24 @@ class BetExchangeController extends AbstractMatchedBettingController
     #[Route('/storeExchange', name: 'store_exchange')]
     public function store(Request $request): Response
     {
-        $exchangeRequest = $this->getExchangeRequest($request);
+        $this->storeIfValid($this->getRequestDataEntity($request));
+        return $this->redirectToRoute(self::CREATE_ROUTE_NAME);
+    }
+
+    private function storeIfValid(object $objectFromRequest): void
+    {
+        if (!$this->isValidData($objectFromRequest)) {
+            $this->flashMessageService->addErrorMessage('create.new.exchange.flash.error');
+            return;
+        }
+
+        $exchangeRequest = new ExchangeRequest($objectFromRequest->name, $objectFromRequest->url);
         $this->exchangeInteractor->add($exchangeRequest);
 
         $this->flashMessageService->addInfoMessage(
-            'create.new.exchange.flash', ['name' => $exchangeRequest->getName(), 'url' => $exchangeRequest->getUrl()]
+            'create.new.exchange.flash.info',
+            ['name' => $exchangeRequest->getName(), 'url' => $exchangeRequest->getUrl()]
         );
-
-        return $this->redirectToRoute(self::CREATE_ROUTE_NAME);
     }
 
     protected function getClassType(): string
@@ -43,9 +53,21 @@ class BetExchangeController extends AbstractMatchedBettingController
         return BetExchangeType::class;
     }
 
-    private function getExchangeRequest(Request $request): ExchangeRequest
+    private function isValidData(object $objectFromRequest): bool
     {
-        $betExchange = $this->getRequestDataEntity($request);
-        return new ExchangeRequest($betExchange->name, $betExchange->url);
+        if (empty($objectFromRequest->name) || empty($objectFromRequest->url)) {
+            return false;
+        }
+
+        if (!$this->isUrlSchemaCorrect($objectFromRequest->url)) {
+            return false;
+        }
+
+        return filter_var($objectFromRequest->url, FILTER_VALIDATE_URL) !== false;
+    }
+
+    private function isUrlSchemaCorrect(string $url): bool
+    {
+        return str_starts_with($url, 'http') || str_starts_with($url, 'https');
     }
 }
