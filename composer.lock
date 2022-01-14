@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9a83fcc99ec25afbba4cef9914b68ed",
+    "content-hash": "f12a886afb05c7ca6676a8fcd4aaf67a",
     "packages": [
         {
             "name": "auret/bet-profiler",
