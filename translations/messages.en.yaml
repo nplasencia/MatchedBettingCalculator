@@ -13,9 +13,26 @@ create:
         info: Created new Bookmaker name [url]
         error: Problem creating new Bookmaker. Check data provided.
 
+    event-type:
+      title: Create new Event Type
+      flash:
+        info: Created new Event Type name [code]
+        error: Problem creating new Event Type. Check data provided.
+
+    matched-bet:
+      title: Create new Matched Bet
+
 form:
   field:
     name: Name
     url: Url
+    bookmaker: Bookmaker
+    stake: Stake
+    odds: Odds
+    return: Return
+    profit: Profit
+    result: Result
+    code: Code
+
   button:
     save: Save
