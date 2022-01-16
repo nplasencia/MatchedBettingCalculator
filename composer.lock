@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "auret/bet-profiler",
-            "version": "1.0.3",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nplasencia/BetProfiler.git",
-                "reference": "3fdcbf63b28333706a9cb693d050625fc64ca2b8"
+                "reference": "de3485896ed12aec1468ab514b718f892c0d8404"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/3fdcbf63b28333706a9cb693d050625fc64ca2b8",
-                "reference": "3fdcbf63b28333706a9cb693d050625fc64ca2b8",
+                "url": "https://api.github.com/repos/nplasencia/BetProfiler/zipball/de3485896ed12aec1468ab514b718f892c0d8404",
+                "reference": "de3485896ed12aec1468ab514b718f892c0d8404",
                 "shasum": ""
             },
             "require": {
@@ -45,9 +45,9 @@
             "description": "Bet profiler project",
             "support": {
                 "issues": "https://github.com/nplasencia/BetProfiler/issues",
-                "source": "https://github.com/nplasencia/BetProfiler/tree/1.0.3"
+                "source": "https://github.com/nplasencia/BetProfiler/tree/1.1.1"
             },
-            "time": "2022-01-14T14:08:24+00:00"
+            "time": "2022-01-16T14:30:16+00:00"
         },
         {
             "name": "composer/package-versions-deprecated",
