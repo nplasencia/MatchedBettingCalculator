@@ -19,6 +19,12 @@ create:
         info: Created new Event Type name [code]
         error: Problem creating new Event Type. Check data provided.
 
+    market-type:
+      title: Create new Market Type
+      flash:
+        info: Created new Market Type name [code]
+        error: Problem creating new Market Type. Check data provided.
+
     matched-bet:
       title: Create new Matched Bet
 
