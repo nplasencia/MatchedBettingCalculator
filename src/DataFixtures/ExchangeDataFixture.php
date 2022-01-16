@@ -2,15 +2,15 @@
 
 namespace Auret\MatchedBetting\DataFixtures;
 
-use Auret\MatchedBetting\Entity\BetExchange;
+use Auret\MatchedBetting\Entity\Exchange;
 
 final class ExchangeDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): BetExchange
+    protected function generateFakerData(): Exchange
     {
         $name = $this->faker->name();
         $url = $this->faker->url();
 
-        return new BetExchange(null, $name, $url);
+        return new Exchange(null, $name, $url);
     }
 }

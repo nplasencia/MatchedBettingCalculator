@@ -2,15 +2,15 @@
 
 namespace Auret\MatchedBetting\DataFixtures;
 
-use Auret\MatchedBetting\Entity\BetBookmaker;
+use Auret\MatchedBetting\Entity\Bookmaker;
 
 final class BookmakerDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): BetBookmaker
+    protected function generateFakerData(): Bookmaker
     {
         $name = $this->faker->name();
         $url = $this->faker->url();
 
-        return new BetBookmaker(null, $name, $url);
+        return new Bookmaker(null, $name, $url);
     }
 }

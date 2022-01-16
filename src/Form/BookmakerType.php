@@ -1,8 +1,8 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Auret\MatchedBetting\Form;
 
-use Auret\MatchedBetting\Entity\BetBookmaker;
+use Auret\MatchedBetting\Entity\Bookmaker;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -22,6 +22,6 @@ class BookmakerType extends AbstractMatchedBettingType
 
     protected function getDataClass(): string
     {
-        return BetBookmaker::class;
+        return Bookmaker::class;
     }
 }

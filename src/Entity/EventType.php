@@ -1,15 +1,13 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Auret\MatchedBetting\Entity;
 
-use Auret\MatchedBetting\Repository\BookmakerRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=BookmakerRepository::class)
- * @ORM\Table(name="bookmaker")
+ * @ORM\Entity(repositoryClass=EventTypeRepository::class)
  */
-class BetBookmaker
+class EventType
 {
     /**
      * @ORM\Id
@@ -26,13 +24,13 @@ class BetBookmaker
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $url;
+    private ?string $code;
 
-    public function __construct(int $id = null, string $name = null, string $url = null)
+    public function __construct(int $id = null, string $name = null, string $code = null)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->url = $url;
+        $this->code = $code;
     }
 
     public function getId(): ?int
@@ -45,8 +43,8 @@ class BetBookmaker
         return $this->name;
     }
 
-    public function getUrl(): ?string
+    public function getCode(): ?string
     {
-        return $this->url;
+        return $this->code;
     }
 }

@@ -1,9 +1,9 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Auret\MatchedBetting\Repository;
 
-use Auret\MatchedBetting\Entity\BetBookmaker;
-use Auret\BetProfiler\Entity\Bookmaker;
+use Auret\MatchedBetting\Entity\Bookmaker;
+use Auret\BetProfiler\Entity\Bookmaker as CoreBookmaker;
 use Auret\BetProfiler\Gateway\BookmakerGatewayInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -12,12 +12,12 @@ class BookmakerRepository extends ServiceEntityRepository implements BookmakerGa
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, BetBookmaker::class);
+        parent::__construct($registry, Bookmaker::class);
     }
 
-    public function add(Bookmaker $bookmaker): void
+    public function add(CoreBookmaker $bookmaker): void
     {
-        $betBookmaker = $this->convert($bookmaker);
+        $betBookmaker = $this->convertFromCoreEntity($bookmaker);
         $this->getEntityManager()->persist($betBookmaker);
         $this->getEntityManager()->flush();
     }
@@ -27,7 +27,7 @@ class BookmakerRepository extends ServiceEntityRepository implements BookmakerGa
         // TODO: Implement delete() method.
     }
 
-    public function update(int $id, Bookmaker $bookmaker): void
+    public function update(int $id, CoreBookmaker $bookmaker): void
     {
         // TODO: Implement update() method.
     }
@@ -37,13 +37,13 @@ class BookmakerRepository extends ServiceEntityRepository implements BookmakerGa
         // TODO: Implement getAll() method.
     }
 
-    public function get(int $id): Bookmaker
+    public function get(int $id): CoreBookmaker
     {
         // TODO: Implement get() method.
     }
 
-    private function convert(Bookmaker $bookmaker): BetBookmaker
+    private function convertFromCoreEntity(CoreBookmaker $coreBookmaker): Bookmaker
     {
-        return new BetBookmaker($bookmaker->getId(), $bookmaker->getName(), $bookmaker->getUrl());
+        return new Bookmaker($coreBookmaker->getId(), $coreBookmaker->getName(), $coreBookmaker->getUrl());
     }
 }

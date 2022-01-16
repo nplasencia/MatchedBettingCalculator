@@ -2,8 +2,8 @@
 
 namespace Auret\MatchedBetting\Repository;
 
-use Auret\MatchedBetting\Entity\BetExchange;
-use Auret\BetProfiler\Entity\Exchange;
+use Auret\MatchedBetting\Entity\Exchange;
+use Auret\BetProfiler\Entity\Exchange as CoreExchange;
 use Auret\BetProfiler\Gateway\ExchangeGatewayInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -12,12 +12,12 @@ class ExchangeRepository extends ServiceEntityRepository implements ExchangeGate
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, BetExchange::class);
+        parent::__construct($registry, Exchange::class);
     }
 
-    public function add(Exchange $exchange): void
+    public function add(CoreExchange $exchange): void
     {
-        $betExchange = $this->convert($exchange);
+        $betExchange = $this->convertFromCoreEntity($exchange);
         $this->getEntityManager()->persist($betExchange);
         $this->getEntityManager()->flush();
     }
@@ -27,7 +27,7 @@ class ExchangeRepository extends ServiceEntityRepository implements ExchangeGate
         // TODO: Implement delete() method.
     }
 
-    public function update(int $id, Exchange $exchange): void
+    public function update(int $id, CoreExchange $exchange): void
     {
         // TODO: Implement update() method.
     }
@@ -37,13 +37,13 @@ class ExchangeRepository extends ServiceEntityRepository implements ExchangeGate
         // TODO: Implement getAll() method.
     }
 
-    public function get(int $id): Exchange
+    public function get(int $id): CoreExchange
     {
         // TODO: Implement get() method.
     }
 
-    private function convert(Exchange $exchange): BetExchange
+    private function convertFromCoreEntity(CoreExchange $coreExchange): Exchange
     {
-        return new BetExchange($exchange->getId(), $exchange->getName(), $exchange->getUrl());
+        return new Exchange($coreExchange->getId(), $coreExchange->getName(), $coreExchange->getUrl());
     }
 }

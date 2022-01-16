@@ -1,8 +1,8 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 
 namespace Auret\MatchedBetting\Form;
 
-use Auret\MatchedBetting\Entity\BetExchange;
+use Auret\MatchedBetting\Entity\Exchange;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
@@ -22,6 +22,6 @@ class ExchangeType extends AbstractMatchedBettingType
 
     protected function getDataClass(): string
     {
-        return BetExchange::class;
+        return Exchange::class;
     }
 }
