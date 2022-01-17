@@ -6,7 +6,7 @@ use Auret\MatchedBetting\Entity\EventType;
 
 final class EventTypeDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): EventType
+    protected function generateFakerData(int $i): EventType
     {
         $name = $this->faker->word;
         $code = strtoupper($name);

@@ -6,7 +6,7 @@ use Auret\MatchedBetting\Entity\MarketType;
 
 final class MarketTypeDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): MarketType
+    protected function generateFakerData(int $i): MarketType
     {
         $name = $this->faker->word;
         $code = strtoupper($name);

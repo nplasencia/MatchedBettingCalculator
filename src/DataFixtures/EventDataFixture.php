@@ -8,7 +8,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 final class EventDataFixture extends MatchedBettingFixture implements DependentFixtureInterface
 {
-    protected function generateFakerData(): Event
+    protected function generateFakerData(int $i): Event
     {
         $name = sprintf('%s vs %s', $this->faker->firstNameMale, $this->faker->firstNameMale);
         $dateTime = $this->faker->dateTimeInInterval('-1 years', '+2 years');

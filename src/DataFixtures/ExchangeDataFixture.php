@@ -6,7 +6,7 @@ use Auret\MatchedBetting\Entity\Exchange;
 
 final class ExchangeDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): Exchange
+    protected function generateFakerData(int $i): Exchange
     {
         $name = $this->faker->name();
         $url = $this->faker->url();

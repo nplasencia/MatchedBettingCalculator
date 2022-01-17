@@ -9,7 +9,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 final class BackBetDataFixture extends MatchedBettingFixture implements DependentFixtureInterface
 {
-    protected function generateFakerData(): BackBet
+    protected function generateFakerData(int $i): BackBet
     {
         /** @var Bookmaker $bookmaker */
         $bookmaker = $this->getRandomObjectReference(Bookmaker::class);

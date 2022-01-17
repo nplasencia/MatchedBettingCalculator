@@ -9,7 +9,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 final class LayBetDataFixture extends MatchedBettingFixture implements DependentFixtureInterface
 {
-    protected function generateFakerData(): LayBet
+    protected function generateFakerData(int $i): LayBet
     {
         $betExchange = $this->getRandomObjectReference(Exchange::class);
         $stake = $this->faker->randomFloat(2);

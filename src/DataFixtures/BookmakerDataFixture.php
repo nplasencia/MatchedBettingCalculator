@@ -6,7 +6,7 @@ use Auret\MatchedBetting\Entity\Bookmaker;
 
 final class BookmakerDataFixture extends MatchedBettingFixture
 {
-    protected function generateFakerData(): Bookmaker
+    protected function generateFakerData(int $i): Bookmaker
     {
         $name = $this->faker->name();
         $url = $this->faker->url();
