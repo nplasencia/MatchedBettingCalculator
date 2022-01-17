@@ -2,11 +2,9 @@
 
 namespace Auret\MatchedBetting\DataFixtures;
 
-use Auret\BetProfiler\Common\BetResultEnum;
 use Auret\BetProfiler\Common\MatchedBetModeEnum;
 use Auret\BetProfiler\Common\MatchedBetTypeEnum;
 use Auret\MatchedBetting\Entity\BackBet;
-use Auret\MatchedBetting\Entity\Bookmaker;
 use Auret\MatchedBetting\Entity\Event;
 use Auret\MatchedBetting\Entity\LayBet;
 use Auret\MatchedBetting\Entity\MarketType;
