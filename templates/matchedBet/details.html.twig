@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ ('create.new.matched-bet.title')|trans }}{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>{{ ('create.new.matched-bet.title')|trans }}</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {{ form_start(form) }}
+    <div class="form-group">
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.bookmaker')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.bookmaker) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.stake')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.backBetStake) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.odds')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.backBetOdds) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.return')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.backBetReturn) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.profit')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.backBetProfit) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-lg-4" for="name">{{ ('form.field.result')|trans }}</label>
+            <div class="col-lg-4">
+                {{ form_widget(form.backBetResult) }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-8">
+            {{ form_widget(form.save) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
