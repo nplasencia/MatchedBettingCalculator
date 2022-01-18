@@ -26,15 +26,14 @@ final class BackBetRepositoryTest extends KernelTestCase
     public function testAdd_oneBackBet_success(): void
     {
         $bookmakerId = 1;
-        $bookmakerName = 'Some bookmaker name';
-        $bookmakerUrl = 'http://some.bookmaker.url';
         $backBetStake = 100.2;
         $backBetOdds = 4.3;
         $backBetReturn = 125.19;
         $backBetProfit = -2.5;
         $backBetResult = BetResultEnum::WIN;
+        $backBetResultValue = $backBetResult->value;
 
-        $bookmaker = new CoreBookmaker($bookmakerId, $bookmakerName, $bookmakerUrl);
+        $bookmaker = new CoreBookmaker($bookmakerId, null, null);
         $backBet = new CoreBackBet(null, $bookmaker, $backBetStake, $backBetOdds, $backBetReturn, $backBetProfit, $backBetResult);
         $this->repository->add($backBet);
 
@@ -48,21 +47,20 @@ final class BackBetRepositoryTest extends KernelTestCase
         $this->assertSame($backBetOdds, $backBet->getOdds());
         $this->assertSame($backBetReturn, $backBet->getReturn());
         $this->assertSame($backBetProfit, $backBet->getProfit());
-        $this->assertSame($backBetResult, $backBet->getResult());
+        $this->assertSame($backBetResultValue, $backBet->getResult());
     }
 
     public function testAdd_someBookmakers_success(): void
     {
         $bookmakerId = 1;
-        $bookmakerName = 'Some bookmaker name';
-        $bookmakerUrl = 'http://some.bookmaker.url';
         $backBetStake = 100.2;
         $backBetOdds = 4.3;
         $backBetReturn = 125.19;
         $backBetProfit = -2.5;
         $backBetResult = BetResultEnum::WIN;
+        $backBetResultValue = $backBetResult->value;
 
-        $bookmaker = new CoreBookmaker($bookmakerId, $bookmakerName, $bookmakerUrl);
+        $bookmaker = new CoreBookmaker($bookmakerId, null, null);
         $backBet = new CoreBackBet(null, $bookmaker, $backBetStake, $backBetOdds, $backBetReturn, $backBetProfit, $backBetResult);
         $this->repository->add($backBet);
         $this->repository->add($backBet);
@@ -78,7 +76,7 @@ final class BackBetRepositoryTest extends KernelTestCase
             $this->assertSame($backBetOdds, $backBet->getOdds());
             $this->assertSame($backBetReturn, $backBet->getReturn());
             $this->assertSame($backBetProfit, $backBet->getProfit());
-            $this->assertSame($backBetResult, $backBet->getResult());
+            $this->assertSame($backBetResultValue, $backBet->getResult());
         }
     }
 }
