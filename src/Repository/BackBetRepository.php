@@ -7,7 +7,6 @@ use Auret\BetProfiler\Entity\BackBet as CoreBackBet;
 use Auret\BetProfiler\Entity\Bookmaker as CoreBookmaker;
 use Auret\BetProfiler\Gateway\BackBetGatewayInterface;
 use Auret\MatchedBetting\Entity\BackBet;
-use Auret\MatchedBetting\Entity\Bookmaker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
